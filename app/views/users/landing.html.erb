@@ -1,0 +1,26 @@
+<h1>Welcome to Goomo-Flights</h1>
+
+<%= form_for @user, :url => { :action => 'validate'} do |form| %>
+
+  <p>
+    <%= form.label :UserName %><br>
+    <%= form.text_field :username %>
+  </p>
+ 
+  <p>
+    <%= form.label :Password %><br>
+    <%= form.password_field :password %>
+  </p>
+ 
+  <p>
+    <%= form.submit "Log In" %>
+  </p>
+ 
+<% end %>
+
+<%= link_to 'Sign Up', new_user_path %>
+
+<br>
+<% if flash[:danger] %>
+  <div style="color:red" ><%= flash[:danger] %></div>
+<% end %>
